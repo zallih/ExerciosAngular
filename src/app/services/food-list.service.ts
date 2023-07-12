@@ -9,6 +9,7 @@ export class FoodListService {
     "X Bacon",
     "Salda",
     "Batata",
+    "Chocolate",
 
   ];
 

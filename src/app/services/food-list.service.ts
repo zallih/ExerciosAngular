@@ -10,6 +10,7 @@ export class FoodListService {
     "Salda",
     "Batata",
     "Chocolate",
+    "Queijo",
 
   ];
 

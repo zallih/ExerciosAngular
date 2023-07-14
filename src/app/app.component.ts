@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `
+  template: ` 
+    <app-food-add></app-food-add>
     <app-food-list></app-food-list>
     <router-outlet></router-outlet>
   `

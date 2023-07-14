@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FoodListService } from 'src/app/services/food-list.service';
 
 @Component({
   selector: 'app-food-add',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class FoodAddComponent {
 
+  constructor(private foodListService: FoodListService){
+
+  }
+
+  public addItem(value: string){
+    return this.foodListService.foodListAdd(value);
+  }
 }

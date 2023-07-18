@@ -1,33 +1,45 @@
-<form #form="ngForm">
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
+    <h3>Dados:</h3>
     <label >
         Nome:
-        <input type="text" name="nome" ngModel>
+        <input type="text" name="nome" #nome="ngModel" [ngModel]="nome.value" required>
+        <span *ngIf="!nome.valid">
+            Invalid
+        </span>
+        <span *ngIf="nome.valid">
+            Valid
+        </span>
     </label>
 
     <br><br>
+    
+    Preenchido: {{nome.valid}} <br>
+    Caracteres: {{nome.dirty}} <br>
+    Tocou: {{nome.touched}} <br>
 
-    Sexo:
+    <br><br>
+
+    <h3>Sexo:</h3>
     <label >
         Feminino
-        <input type="radio" name="sexo" value="Feminino" ngModel>
+        <input type="radio" name="sexo" value="Feminino" ngModel required>
     </label>
 
     <br><br>
     <label >
         Masculino
-        <input type="radio" name="sexo" value="Masculino" ngModel>
+        <input type="radio" name="sexo" value="Masculino" ngModel required>
     </label>
 
     <br><br>    
     <label >
         Outro
-        <input type="radio" name="sexo" value="Outro" ngModel>
+        <input type="radio" name="sexo" value="Outro" ngModel required>
     </label>
 
     <br><br>
     
-    Tecnologias:
-
+    <h3>Tecnologias:</h3>
     <label >
         Angular
         <input type="checkbox" name="angular" ngModel>
@@ -42,6 +54,18 @@
 
     <br><br>
 
+    <select name="comda" ngModel required>
+        <option value="">Selecione uma comida</option>
+        <option *ngFor="let item of list" [ngValue]="item">
+            {{item.comida}} - {{item.preco}} 
+        </option>
+    </select>
+
+    <br><br>
+
+    <button [disabled]="form.invalid">
+        Enviar Dados
+    </button>
 </form>
 
 {{form.value | json}}

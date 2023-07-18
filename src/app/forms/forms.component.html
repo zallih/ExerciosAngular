@@ -2,8 +2,20 @@
     <h3>Dados:</h3>
     <label >
         Nome:
-        <input type="text" name="nome" ngModel>
+        <input type="text" name="nome" #nome="ngModel" [ngModel]="nome.value" required>
+        <span *ngIf="!nome.valid">
+            Invalid
+        </span>
+        <span *ngIf="nome.valid">
+            Valid
+        </span>
     </label>
+
+    <br><br>
+    
+    Preenchido: {{nome.valid}} <br>
+    Caracteres: {{nome.dirty}} <br>
+    Tocou: {{nome.touched}} <br>
 
     <br><br>
 

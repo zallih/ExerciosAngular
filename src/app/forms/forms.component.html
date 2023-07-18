@@ -3,6 +3,45 @@
         Nome:
         <input type="text" name="nome" ngModel>
     </label>
+
+    <br><br>
+
+    Sexo:
+    <label >
+        Feminino
+        <input type="radio" name="sexo" value="Feminino" ngModel>
+    </label>
+
+    <br><br>
+    <label >
+        Masculino
+        <input type="radio" name="sexo" value="Masculino" ngModel>
+    </label>
+
+    <br><br>    
+    <label >
+        Outro
+        <input type="radio" name="sexo" value="Outro" ngModel>
+    </label>
+
+    <br><br>
+    
+    Tecnologias:
+
+    <label >
+        Angular
+        <input type="checkbox" name="angular" ngModel>
+    </label>
+
+    <br><br>
+
+    <label >
+        Java
+        <input type="checkbox" name="java" ngModel>
+    </label>
+
+    <br><br>
+
 </form>
 
 {{form.value | json}}

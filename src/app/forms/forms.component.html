@@ -1,4 +1,5 @@
 <form #form="ngForm">
+    <h3>Dados:</h3>
     <label >
         Nome:
         <input type="text" name="nome" ngModel>
@@ -6,7 +7,7 @@
 
     <br><br>
 
-    Sexo:
+    <h3>Sexo:</h3>
     <label >
         Feminino
         <input type="radio" name="sexo" value="Feminino" ngModel>
@@ -26,8 +27,7 @@
 
     <br><br>
     
-    Tecnologias:
-
+    <h3>Tecnologias:</h3>
     <label >
         Angular
         <input type="checkbox" name="angular" ngModel>
@@ -41,6 +41,14 @@
     </label>
 
     <br><br>
+
+    <select name="comda" ngModel>
+        <option value="">Selecione uma comida</option>
+        <option *ngFor="let item of list" [ngValue]="item">
+            {{item.comida}} - {{item.preco}} 
+        </option>
+    </select>
+
 
 </form>
 
